@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link href="../static/css/style.css" rel="stylesheet">
+        <title>COMMKnows</title>
+    </head>
+    <body>
+
+        <div class="container-fluid custom-navbar">
+            <div class="d-flex justify-content-center">
+                <h1>COMMKnows</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p>{{ day }}, {{ month }} {{ date }}, {{ year }}</p>
+            </div>
+        </div>
+
+        <div class="container-fluid content">
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    {% for news in newslist %}
+                    <div class="card mb-2 mt-1" aria-hidden="true">
+                        <img src="{{ news.img_url }}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <span class="col-6">{{ news.title }}</span>
+                            </h5>
+                            <p class="card-text placeholder-glow">
+                                <span class="col">{{ news.desc }}</span>
+                            </p>
+                            <a href="{{ news.news_url }}" target="_blank" tabindex="-1" class="btn btn-success col-12">Read More...</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    </body>
+</html>
