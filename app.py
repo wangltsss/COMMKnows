@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 from news import NewsFetcher
 import time
 
@@ -52,13 +52,18 @@ def get_date():
     return [day, mon, dat, year]
 
 
-@app.route('/')
-def hello_world():  # put application's code here
+@app.route('/COMMKnows/')
+def comm_knows():  # put application's code here
     fetcher = NewsFetcher()
     fetcher.fetch()
     fetcher.load_news()
     date = get_date()
     return render_template("home.html", day=date[0], month=date[1], date=date[2], year=date[3], newslist=fetcher.newsfeed)
+
+
+@app.route('/commknows/')
+def ambiguate():
+    return redirect(url_for("comm_knows"))
 
 
 if __name__ == '__main__':
