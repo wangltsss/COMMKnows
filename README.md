@@ -16,11 +16,7 @@ the original news source.
 **- How we built it 💻** <br>
 
 **- Challenges we ran into 🧐** <br>
-The biggest challenges we ran into are learning Python and the UI design. Although our teammates have some previous
-experience in Java, JavaScript, and C, this is our first time using Python to build websites. Thankfully, our coding
-experiences in other languages help us a lot! Besides, as we consider that people will more likely read news from their
-phones, we want to develop a UI that fits both the phone display size and the website size. And it spent lots of time
-for us to improve our UI design to improve the user experience.
+The biggest challenge we meet is deploying our website onto the server. We tried to use GoDaddy at first, but it does not provide root permission. Thus, we are unable to download the dependencies. Then we tried the Aliyun server which is based in China, and we have previous experience using it. However, after 3 hours of adjustment, this server was still not working since the news API we used is considered a "foreign website" and got banned in mainland China. Finally, we found the Alibabacloud server, which worked perfectly for our project and have the required root permission. After installing the git and pythone3 onto this server, we successfully deployed our website. This whole process took us over 9 hours of work. Every time we changed to another server, we needed to work from scratch to build the environment. Thankfully, everything worked out in the end, and we are happy that all these hard-workings will provide valuable experience to support our further work dealing with the server. 
 
 **- Accomplishments that we're proud of 🥳** <br>
 The most satisfactory part for us is that we learned a new language and built something truly helpful for our everyday
